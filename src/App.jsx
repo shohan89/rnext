@@ -1,10 +1,10 @@
-import Gallery from "./components/Gallery"
+import Avatar from "./components/Avater"
 
 function App() {
 
   return (
     <>
-      <Gallery />
+      <Avatar />
     </>
   )
 }

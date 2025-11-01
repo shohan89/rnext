@@ -1,6 +1,11 @@
-
-export default function Avater() {
+export default function Avatar() {
   return (
-    <div>Avater</div>
-  )
+    <img
+      className="avatar"
+      src="https://i.imgur.com/1bX5QH6.jpg"
+      alt="Lin Lanying"
+      width={100}
+      height={100}
+    />
+  );
 }
