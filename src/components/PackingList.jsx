@@ -1,10 +1,15 @@
 function Item({ name, isPacked }) {
-//   if(isPacked){
-//     return null;
-//   }
-//   return <li>{name}</li>
-// instead of the above code, we can use a ternary operator to conditionally render the item
-    return <li>{ isPacked ? <del>{name + '✅'}</del> : name }</li>;
+
+    let itemContent;
+
+    if(isPacked){
+        itemContent = name + '✅';
+    }
+    else{
+        itemContent = name;
+    }
+
+    return <li>{ itemContent }</li>;
 }
 export default function PackingList() {
   return (
@@ -12,11 +17,11 @@ export default function PackingList() {
       <h1>Sally Ride's Packing List</h1>
       <ul>
         <Item 
-          isPacked={true} 
+          isPacked={false} 
           name="Space suit" 
         />
         <Item 
-          isPacked={false} 
+          isPacked={true} 
           name="Helmet with a golden leaf" 
         />
         <Item 
