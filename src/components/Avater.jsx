@@ -1,8 +1,8 @@
-export default function Avatar({ person }) {
+export default function Avatar() {
 
   return (
     <div>
-      <h2>Name: {person}</h2>
+      <h2>This Profile's children Printing from Avater.</h2>
     </div>
   );
 }

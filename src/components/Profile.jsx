@@ -1,11 +1,8 @@
-import Avatar from './Avater'
-import Info from './Info'
 
-export default function Profile(props) {
+export default function Profile({ children }) {
   return (
     <div>
-        <Avatar {...props} />
-        <Info age={props.age}/>
+        {children}
     </div>
   )
 }
