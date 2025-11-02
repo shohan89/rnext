@@ -1,9 +1,9 @@
-import PackingList from "./components/PackingList";
+import PeopleList from "./components/PeopleList";
 
 
 export default function App() {
 
   return (
-    <PackingList />
+    <PeopleList />
   );
 }
