@@ -1,12 +1,17 @@
-import Avatar from "./components/Avater"
+import Profile from "./components/Profile";
 
-function App() {
+
+export default function App() {
+
+  const person = 'Shohan';
+  const size = 45;  
+  const age = 28;
 
   return (
-    <>
-      <Avatar />
-    </>
-  )
+    <Profile 
+      person={person}
+      size={size}
+      age={age}
+    />
+  );
 }
-
-export default App
