@@ -1,12 +1,9 @@
-import Avatar from "./components/Avater";
-import Profile from "./components/Profile";
+import PackingList from "./components/PackingList";
 
 
 export default function App() {
 
   return (
-    <Profile>
-      <Avatar />
-    </Profile>
+    <PackingList />
   );
 }
