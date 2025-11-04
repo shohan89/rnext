@@ -1,9 +1,8 @@
-import PeopleList from "./components/PeopleList";
 
 
 export default function App() {
 
   return (
-    <PeopleList />
+    <h2 className="text-3xl font-bold underline">Tic Tac Toe</h2>
   );
 }
