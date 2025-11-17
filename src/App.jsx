@@ -1,10 +1,10 @@
-import InputForm from "./components/InputForm";
+import Form2 from "./components/Form2";
 
 export default function App() {
   
   return (
     <div>
-        <InputForm />
+        <Form2 />
     </div>
   );
 }
