@@ -1,10 +1,10 @@
-import Ticket from "./components/Ticket";
+import Travel from "./components/Travel";
 
 export default function App() {
   
   return (
     <div>
-        <Ticket />
+        <Travel />
     </div>
   );
 }
