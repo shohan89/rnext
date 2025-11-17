@@ -1,10 +1,10 @@
-import Pointer from "./components/Pointer";
+import InputForm from "./components/InputForm";
 
 export default function App() {
   
   return (
     <div>
-        <Pointer />
+        <InputForm />
     </div>
   );
 }
