@@ -2,15 +2,21 @@ import { useState } from "react";
 
 export default function Form2() {
     const [feedback, setFeedback] = useState('');
-    const [isSending, setIsSending] = useState(false);
-    const [isSent, setIsSent] = useState(false);
+    const [status, setStatus] = useState('typing'); //typing, sending, sent
+    // const [isSending, setIsSending] = useState(false);
+    // const [isSent, setIsSent] = useState(false);
+
+    const isSending = status === 'sending';
+    const isSent = status === 'sent';
 
     async function handleFormSubmit(e){
         e.preventDefault();
-        setIsSending(true);
+        // setIsSending(true);
+        setStatus('sending');
         await sendMessage(feedback);
-        setIsSending(false);
-        setIsSent(true);
+        // setIsSending(false);
+        // setIsSent(true);
+        setStatus('sent');
     }
     // Show sent message confirmation
     if(isSent){
