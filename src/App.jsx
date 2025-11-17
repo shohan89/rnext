@@ -1,10 +1,10 @@
-import Form2 from "./components/Form2";
+import Ticket from "./components/Ticket";
 
 export default function App() {
   
   return (
     <div>
-        <Form2 />
+        <Ticket />
     </div>
   );
 }
