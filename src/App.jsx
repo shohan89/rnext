@@ -1,9 +1,10 @@
+import Scoreboard from "./components/Scoreboard";
 
 export default function App() {
   
   return (
     <div>
-        <h2>Hello</h2>
+        <Scoreboard />
     </div>
   );
 }
