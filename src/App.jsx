@@ -1,10 +1,10 @@
-import TravelPlan from "./components/TravelPlan";
+import Accordion from "./components/Accordion";
 
 export default function App() {
   
   return (
     <div>
-        <TravelPlan />
+        <Accordion />
     </div>
   );
 }
