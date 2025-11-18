@@ -1,10 +1,10 @@
-import Accordion from "./components/Accordion";
+import SyncedInputs from "./components/SyncedInputs";
 
 export default function App() {
   
   return (
     <div>
-        <Accordion />
+        <SyncedInputs />
     </div>
   );
 }
