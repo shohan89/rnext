@@ -1,7 +1,6 @@
 // DOM elements
 const price = document.getElementById('price');
 const total = document.getElementById('total');
-console.log("🚀 ~ total:", total)
 const addToCartBtn = document.getElementById('addToCartBtn');
 
 
