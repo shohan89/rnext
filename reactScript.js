@@ -7,14 +7,18 @@
 
 // How React works under the hood
 const price = 5000;
+
 const Product = () => {
+
     const [quantity, setQuantity] = React.useState(0);
     const [total, setTotal] = React.useState(0);
+
     // Update total price when quantity changes
     const addToCart = () => {
         setQuantity(quantity + 1);
         setTotal(total + price);
     }
+    
     return (
         <div className="shadow-md rounded-lg bg-slate-800 border-slate-700">
       <a href="#">
