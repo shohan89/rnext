@@ -6,5 +6,10 @@
 // root.appendChild(p);
 
 // How React works under the hood
-const p = React.createElement('p', null, 'Hello from React!');
-ReactDOM.createRoot(document.getElementById('root')).render(p);
+const myElement = (
+    <div>
+        <h1>Hello from React!</h1>
+        <p>Transpiled with Babel!</p>
+    </div>
+);
+ReactDOM.createRoot(document.getElementById('root')).render(myElement);
