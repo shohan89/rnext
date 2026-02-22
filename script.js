@@ -1,8 +1,7 @@
 // DOM elements
-const price = document.getElementById('price');
-const total = document.getElementById('total');
-const addToCartBtn = document.getElementById('addToCartBtn');
-
+const price = document.getElementById("price");
+const total = document.getElementById("total");
+const addToCartBtn = document.getElementById("addToCartBtn");
 
 // State or data
 const productPrice = 5000;
@@ -15,9 +14,9 @@ price.innerText = `৳ ${productPrice}`;
 total.innerText = `৳ ${totalPrice}`;
 
 // Add event listener
-addToCartBtn.addEventListener('click', () => {
-    totalPrice += productPrice;
+addToCartBtn.addEventListener("click", () => {
+  totalPrice += productPrice;
 
-    // Update the UI
-    total.innerText = `৳ ${totalPrice}`;
-})
+  // Update the UI
+  total.innerText = `৳ ${totalPrice}`;
+});
