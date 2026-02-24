@@ -1,10 +1,10 @@
-import Avatar from "./components/Avater"
+import TodoList from "./components/Todo"
 
 function App() {
 
   return (
     <div>
-      <Avatar />
+      <TodoList />
     </div>
   )
 }
