@@ -1,10 +1,10 @@
-import TodoList from "./components/Todo"
+import Profile from "./components/Profile"
 
 function App() {
 
   return (
     <div>
-      <TodoList />
+      <Profile />
     </div>
   )
 }
