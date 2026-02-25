@@ -1,12 +1,11 @@
-import Profile from "./components/Profile"
+import Profile from "./components/Profile";
 
 function App() {
-
   return (
     <div>
       <Profile />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
