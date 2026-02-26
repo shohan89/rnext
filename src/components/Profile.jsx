@@ -1,21 +1,46 @@
-function Avatar({ person, size = 0 }) {
+function getImageUrl(person, size = "s") {
+  return "https://i.imgur.com/" + person.imageId + size + ".jpg";
+}
+
+function Avatar({ person, size }) {
   return (
     <>
+      <img
+        className="avatar"
+        src={getImageUrl(person)}
+        alt={person.name}
+        width={size}
+        height={size}
+      />
       <h2>{person.name}</h2>
-      <p>{size}</p>
     </>
   );
 }
 
 export default function Profile() {
   return (
-    <>
-      <Avatar person={{ name: "Lin Lanying", imageId: "1bX5QH6" }} size={100} />
+    <div>
       <Avatar
-        person={{ name: "Katsuko Saruhashi", imageId: "YfeOqp2" }}
-        size={80}
+        size={100}
+        person={{
+          name: "Katsuko Saruhashi",
+          imageId: "YfeOqp2",
+        }}
       />
-      <Avatar person={{ name: "Aklilu Lemma", imageId: "OKS67lh" }} size={50} />
-    </>
+      <Avatar
+        size={80}
+        person={{
+          name: "Aklilu Lemma",
+          imageId: "OKS67lh",
+        }}
+      />
+      <Avatar
+        size={50}
+        person={{
+          name: "Lin Lanying",
+          imageId: "1bX5QH6",
+        }}
+      />
+    </div>
   );
 }
