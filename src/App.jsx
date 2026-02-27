@@ -1,4 +1,4 @@
-import Gallery from "./components/Gallery2";
+import Profile from "./components/Profile3";
 
 function App() {
   return (
@@ -7,7 +7,8 @@ function App() {
         <Avatar person={{ name: "shohan" }} size={100} />
         <Avatar person={{ name: "Sharoar" }} size={80} />
       </Profile> */}
-      <Gallery />
+      {/* <Gallery /> */}
+      <Profile />
     </div>
   );
 }
