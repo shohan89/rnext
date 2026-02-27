@@ -1,13 +1,13 @@
-import Avatar from "./components/Avatar";
-import Profile from "./components/Profile";
+import Gallery from "./components/Gallery2";
 
 function App() {
   return (
     <div>
-      <Profile>
+      {/* <Profile>
         <Avatar person={{ name: "shohan" }} size={100} />
         <Avatar person={{ name: "Sharoar" }} size={80} />
-      </Profile>
+      </Profile> */}
+      <Gallery />
     </div>
   );
 }
