@@ -1,4 +1,4 @@
-import Profile from "./components/Profile3";
+import PackingList from "./components/PackingList";
 
 function App() {
   return (
@@ -8,7 +8,8 @@ function App() {
         <Avatar person={{ name: "Sharoar" }} size={80} />
       </Profile> */}
       {/* <Gallery /> */}
-      <Profile />
+      {/* <Profile /> */}
+      <PackingList />
     </div>
   );
 }
