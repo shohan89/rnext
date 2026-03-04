@@ -1,11 +1,43 @@
 import "./App.css";
 
-function App() {
+// Component Heirarchy
+/**
+ *      Game
+ *        => Board
+ *           => Square
+ *        => History
+ *
+ *
+ */
+
+function Square() {
+  return (
+    <button className="bg-white border border-gray-300 h-12 w-12 m-1 leading-9 text-lg">
+      X
+    </button>
+  );
+}
+
+function Board() {
   return (
     <>
-      <h1>Welcome to Tic Tac Toe Project</h1>
+      <div>
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div>
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div>
+        <Square />
+        <Square />
+        <Square />
+      </div>
     </>
   );
 }
 
-export default App;
+export default Board;
