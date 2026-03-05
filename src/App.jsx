@@ -24,10 +24,15 @@ function Square({ value, onSquareClick }) {
 
 function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [XIsNext, setXIsNext] = useState(true);
   function handleSquareClick(squareIdx) {
     const nextSquare = squares.slice();
 
-    nextSquare[squareIdx] = "X";
+    if (squares[squareIdx]) {
+      return;
+    }
+    nextSquare[squareIdx] = XIsNext ? "X" : "O";
+    setXIsNext(!XIsNext);
     setSquares(nextSquare);
   }
   return (
