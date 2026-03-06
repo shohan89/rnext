@@ -22,28 +22,27 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-function Board() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [XIsNext, setXIsNext] = useState(true);
-
+function Board({ XIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
+  const isDraw = !winner && squares.every((square) => square !== null);
   let status;
 
   if (winner) {
     status = `Yay! The Winner is: ${winner}`;
+  } else if (isDraw) {
+    status = "It's a draw!";
   } else {
     status = `Next player: ${XIsNext ? "X" : "O"}`;
   }
 
   function handleSquareClick(squareIdx) {
-    const nextSquare = squares.slice();
-
-    if (squares[squareIdx] || winner) {
+    if (squares[squareIdx] || winner || isDraw) {
       return;
     }
-    nextSquare[squareIdx] = XIsNext ? "X" : "O";
-    setXIsNext(!XIsNext);
-    setSquares(nextSquare);
+
+    const nextSquares = squares.slice();
+    nextSquares[squareIdx] = XIsNext ? "X" : "O";
+    onPlay(nextSquares);
   }
   return (
     <>
@@ -64,6 +63,58 @@ function Board() {
         <Square value={squares[8]} onSquareClick={() => handleSquareClick(8)} />
       </div>
     </>
+  );
+}
+
+function Game() {
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [XIsNext, setXIsNext] = useState(true);
+  const [currentMove, setCurrentMove] = useState(0);
+
+  const currentSquares = history[currentMove];
+
+  function resetGame() {
+    setHistory([Array(9).fill(null)]);
+    setCurrentMove(0);
+    setXIsNext(true);
+  }
+
+  function handlePlay(nextSquares) {
+    setXIsNext(!XIsNext);
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    setHistory(nextHistory);
+    setCurrentMove(nextHistory.length - 1);
+  }
+
+  function jumpTo(move) {
+    setCurrentMove(move);
+    setXIsNext(move % 2 === 0);
+  }
+
+  const moves = history.map((squares, move) => {
+    let description;
+    if (move > 0) {
+      description = `Go to move #${move}.`;
+    } else {
+      description = "Let's Start The Game!";
+    }
+    return (
+      <li className="my-1" key={move}>
+        <button onClick={() => jumpTo(move)}>{description}</button>
+      </li>
+    );
+  });
+
+  return (
+    <div className="flex flex-row gap-10 items-center justify-center h-screen">
+      <div>
+        {currentMove > 0 && <button onClick={resetGame}>🔄 Reset Game</button>}
+        <Board XIsNext={XIsNext} squares={currentSquares} onPlay={handlePlay} />
+      </div>
+      <div>
+        <ol>{moves}</ol>
+      </div>
+    </div>
   );
 }
 
@@ -88,4 +139,4 @@ function calculateWinner(squares) {
   return null;
 }
 
-export default Board;
+export default Game;
